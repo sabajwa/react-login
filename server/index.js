@@ -19,6 +19,10 @@ app.use(bodyParser.json());
 
 app.use(cookieParser());
 
+app.get("/", (reeq, res) => {
+  res.json({ hello: "I am to deploy new herok app" });
+});
+
 app.get("/api/user/auth", auth, (req, res) => {
   res.status(200).json({
     _id: req._id,
@@ -66,10 +70,6 @@ app.post("/api/user/login", (req, res) => {
         });
     });
   });
-});
-
-app.get("/", (req, res) => {
-  res.json({ "hell hi how": "are you ahdbbcbccckjcec c j  dhcd cd" });
 });
 
 app.get("/api/user/logout", auth, (req, res) => {
